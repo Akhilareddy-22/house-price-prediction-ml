@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>House Price Prediction</title>
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to right, #4facfe, #00f2fe);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            width: 350px;
+            text-align: center;
+            box-shadow: 0px 10px 30px rgba(0,0,0,0.2);
+        }
+
+        h1 {
+            margin-bottom: 10px;
+        }
+
+        .input-group {
+            margin: 15px 0;
+            text-align: left;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            border-radius: 6px;
+            border: 1px solid #ccc;
+        }
+
+        button {
+            width: 100%;
+            padding: 12px;
+            background: #4facfe;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        button:hover {
+            background: #007bff;
+        }
+
+        .result {
+            margin-top: 20px;
+            font-size: 18px;
+            color: green;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+    <h1>🏠 House Price Prediction</h1>
+    <p>Enter details to predict price</p>
+
+    <!-- Removed form action (no Flask here) -->
+    <form id="predictionForm">
+
+        <div class="input-group">
+            <label>Area (sq ft)</label>
+            <input type="number" id="area" placeholder="Enter area" required>
+        </div>
+
+        <div class="input-group">
+            <label>Bedrooms</label>
+            <input type="number" id="bedrooms" placeholder="Enter bedrooms" required>
+        </div>
+
+        <div class="input-group">
+            <label>Bathrooms</label>
+            <input type="number" id="bathrooms" placeholder="Enter bathrooms" required>
+        </div>
+
+        <button type="submit">🚀 Predict Price</button>
+
+    </form>
+
+    <div class="result" id="result"></div>
+</div>
+
+<script>
+document.getElementById("predictionForm").addEventListener("submit", function(e) {
+    e.preventDefault();
+
+    let area = parseFloat(document.getElementById("area").value);
+    let bedrooms = parseInt(document.getElementById("bedrooms").value);
+    let bathrooms = parseInt(document.getElementById("bathrooms").value);
+
+    // Simple formula (replace with real API later)
+    let price = (area * 3000) + (bedrooms * 50000) + (bathrooms * 30000);
+
+    document.getElementById("result").innerHTML =
+        "💰 Estimated Price: ₹ " + price.toLocaleString();
+});
+</script>
+
+</body>
+</html>
