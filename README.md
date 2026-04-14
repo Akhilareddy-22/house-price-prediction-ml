@@ -11,7 +11,7 @@ Trained a regression model for price prediction
 Evaluated model using metrics like RMSE and R² score
 Saved model using pickle (.pkl)
 Deployed model using Flask for real-time predictions
-# AI / ML USAGE
+## USAGE
 A supervised machine learning model (regression) is used to learn patterns from housing data and predict prices based on user inputs like area, bedrooms, and bathrooms.
 # DEPLOYMENT
 The trained model is integrated into a Flask application where users can input values and get predictions in real time.
